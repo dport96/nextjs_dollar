@@ -60,6 +60,16 @@ const EditStuffForm = ({ stuff }: { stuff: Stuff }) => {
                   <div className="invalid-feedback">{errors.quantity?.message}</div>
                 </Form.Group>
                 <Form.Group>
+                  <Form.Label>Value</Form.Label>
+                  <input
+                    type="number"
+                    {...register('value')}
+                    defaultValue={stuff.value}
+                    className={`form-control ${errors.value ? 'is-invalid' : ''}`}
+                  />
+                  <div className="invalid-feedback">{errors.value?.message}</div>
+                </Form.Group>
+                <Form.Group>
                   <Form.Label>Condition</Form.Label>
                   <select
                     {...register('condition')}
